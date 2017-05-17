@@ -6,11 +6,7 @@ the other.
 Hint: Two strings that are permutations should have the same characters but in 
 different orders. Can you make the orders the same? 
 """
-word1 = "hello"
-word2 = "eholl"
-
-
-same = {}
+from collections import Counter 
 
 def same_permutation(word1, word2):
 
@@ -18,12 +14,16 @@ def same_permutation(word1, word2):
     if len(word1) != len(word2):
         return False
 
-    #Order word2 to look like word1 
-    for i in range(len(word2)): 
-      
-        word_2_change = word2[i+1:len(word2)] + word2[i]
-        print word_2_change
+    counter = Counter()
+    for word in word1:
+        counter[word] += 1
+    for word in word2:
+        if counter[word] == 0:
+            return False
+        counter[word] -= 1
+    return True 
 
-same_permutation(word1, word2) 
+
+print same_permutation("meda", "trel") 
 
 
