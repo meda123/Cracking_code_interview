@@ -22,7 +22,7 @@ def same_permutation(word1, word2):
             return False
         counter[word] -= 1
     return True 
-
+ 
 
 print same_permutation("meda", "trel") 
 
