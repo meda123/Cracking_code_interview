@@ -12,22 +12,16 @@ True
 
 """
 
+from collections import Counter 
+
 example = "Tact Coa"
 exa2 = "taco cat"
 
 def pal_permutation(words, permutation):
 
-    if len(words) != len(permutation):
-        return False
+    words = words.replace(' ', '').lower()
 
-         
-
-
-
-
-
-
-
+    return sum(freq%2 for freq in Counter(words).values()) < 2 
 
 
 test = pal_permutation(example,exa2)
