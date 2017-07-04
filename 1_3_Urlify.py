@@ -7,20 +7,43 @@ that you are given the "true" length of the string.
 
 """
 
-# FIRST TRY: Using a built-in method 
+def urlify(sentence, true_len):
+    """
+    >>> urlify("Mr John Smith   ", 13)
+    'Mr%20John%20Smith'
 
-def urlify(sentence):
+    >>> urlify("much ado about nothing      ", 22)
+    'much%20ado%20about%20nothing'
 
-    no_words = len(sentence.split()) - 1
+    """
 
-    urlfied = sentence.replace(" ", "%20", no_words)
 
-    testing = len(urlfied)
-    print testing
+    # Count num of spaces based on str length 
+    num_spaces = sentence.count(" ", 0, true_len)
 
+    rep_spaces = sentence.replace(" ", "%20", num_spaces)
+    urlfied = rep_spaces.replace(" ", "")
+    
     return urlfied 
+ 
+
+ """
+ Explanation:
+ 
 
 
-test1 = urlify("Mr John Smith   ")
-print test1 
-# Mr%20John%20Smith
+ """
+
+
+##################### DocTests ###########################################
+
+if __name__ == "__main__":
+    import doctest
+
+    print
+    result = doctest.testmod()
+    if not result.failed:
+        print "ALL TESTS PASSED. GOOD WORK!"
+    print
+
+
