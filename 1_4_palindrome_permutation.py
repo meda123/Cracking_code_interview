@@ -57,14 +57,12 @@ One-liner explanation (line #28):
     fre%2 for freq in Counter(words).values()
     >>> [0, 0, 0]
 
-    Lastly, the add all those values 0 + 0 + 0 = 0
+    sum() the add all those values 0 + 0 + 0 = 0
 
-
-
-
-
-
-
+    As long as the sum is less than 2, the words are a permutation of a
+    palindrome. This is because even if the word is an odd-length, it can
+    only return a sum of 1 because at most, only one letter in a word can 
+    have an odd number to still be palindrome. 
 
 """
 
