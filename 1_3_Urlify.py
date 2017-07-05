@@ -20,19 +20,12 @@ def urlify(sentence, true_len):
 
     # Count num of spaces based on str length 
     num_spaces = sentence.count(" ", 0, true_len)
-
+    
     rep_spaces = sentence.replace(" ", "%20", num_spaces)
     urlfied = rep_spaces.replace(" ", "")
     
     return urlfied 
- 
 
- """
- Explanation:
- 
-
-
- """
 
 
 ##################### DocTests ###########################################
